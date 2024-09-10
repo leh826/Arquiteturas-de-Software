@@ -35,12 +35,20 @@ public class AgendaView {
         String telephone = scanner.nextLine();
         return telephone;
     }
-   
+   public int displayAlter(){
+        System.out.println("******************");
+        System.out.println("1. Name: ");
+        System.out.println("2. Surname: ");
+        System.out.println("3. Update Phonenumber: ");
+        return scanner.nextInt();
+    }
     public int displayMenu(){
         System.out.println("*****************");
         System.out.println("1. Add Contact");
         System.out.println("2. View Agenda");
-        System.out.println("3. Exit");
+        System.out.println("3. Delete Contact of Agenda");
+        System.out.println("4. Update Agenda");
+        System.out.println("5. Exit");
         System.out.println("Choose an option: ");
         return scanner.nextInt();
    }

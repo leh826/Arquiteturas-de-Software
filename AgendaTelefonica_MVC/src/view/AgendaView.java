@@ -1,5 +1,6 @@
 package view;
 
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 import model.InfoContact;
@@ -18,7 +19,6 @@ public class AgendaView {
             System.out.println(contact);
         }
     }
-    
     public InfoContact getContactDetails(){
         scanner.nextLine();
         System.out.println("******************");
@@ -30,12 +30,28 @@ public class AgendaView {
         String telephone = scanner.nextLine();
         return new InfoContact(name,surname,telephone);
     }
-    public int displayMenu(){
+    
+    public int displayAlter(){
+        System.out.println("******************");
+        System.out.println("1. Name: ");
+        System.out.println("2. Surname: ");
+        System.out.println("3. Update Phonenumber: ");
+        return scanner.nextInt();
+    }
+    public int displayMenu() {
+    try {
         System.out.println("\n1. Add Contact");
         System.out.println("2. View Agenda");
-        System.out.println("3. Exit");
+        System.out.println("3. Delete Contact");
+        System.out.println("4. Update Contact");
+        System.out.println("5. Exit");
         System.out.println("Choose an option: ");
         return scanner.nextInt();
-   }
+    } catch (InputMismatchException e) {
+        System.out.println("Invalid input. Please enter a number.");
+        scanner.next();
+        return -1;
+    }
+}
     
 }

@@ -23,6 +23,20 @@ public class Agenda {
         return telephone;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSurName(String surName) {
+        this.surName = surName;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+    
+    
+
     @Override
     public String toString() {
         return "Contact: { " + "name = " +name+ " "+surName +", Telephone = "+telephone+"}";
